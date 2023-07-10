@@ -38,15 +38,29 @@ namespace Calculator
         static void Soma()
         {
             Console.WriteLine("Primeiro valor:");
-            float v1 = float.Parse(Console.ReadLine()); //Readline sempre retorna uma string. Caso queira um float, use Parse.
+            float v1;
+
+            if (!float.TryParse(Console.ReadLine(), out v1))
+            {
+                Console.WriteLine("O primeiro valor inserido não é um número válido.");
+                Console.ReadKey();
+                Menu();
+                return;
+            } // Validação de dado através de negação por TryParse.
 
             Console.WriteLine("Segundo valor:");
-            float v2 = float.Parse(Console.ReadLine());
+            float v2;
+
+            if (!float.TryParse(Console.ReadLine(), out v2))
+            {
+                Console.WriteLine("O segundo valor inserido não é um número válido.");
+                Console.ReadKey();
+                Menu();
+                return;
+            }
 
             Console.WriteLine("");
-
-            Console.WriteLine($"O resultado da soma é {v1 + v2}."); // Ao usar o cifrão($), denomina-se interpolação de strings.
-
+            Console.WriteLine($"O resultado da soma é {v1 + v2}.");
             Console.ReadKey();
             Menu();
         }
@@ -54,50 +68,95 @@ namespace Calculator
         static void Subtracao()
         {
             Console.WriteLine("Primeiro valor:");
-            float v1 = float.Parse(Console.ReadLine()); //Readline sempre retorna uma string. Caso queira um float, use Parse.
+            float v1;
+
+            if (!float.TryParse(Console.ReadLine(), out v1))
+            {
+                Console.WriteLine("O primeiro valor inserido não é um número válido.");
+                Console.ReadKey();
+                Menu();
+                return;
+            }
 
             Console.WriteLine("Segundo valor:");
-            float v2 = float.Parse(Console.ReadLine());
+            float v2;
+
+            if (!float.TryParse(Console.ReadLine(), out v2))
+            {
+                Console.WriteLine("O segundo valor inserido não é um número válido.");
+                Console.ReadKey();
+                Menu();
+                return;
+            }
 
             Console.WriteLine("");
-
-            Console.WriteLine($"O resultado da subtração é {v1 - v2}."); // Ao usar o cifrão($), denomina-se interpolação de strings.
-
+            Console.WriteLine($"O resultado da subtração é {v1 - v2}.");
             Console.ReadKey();
             Menu();
         }
+
 
         static void Divisao()
         {
             Console.WriteLine("Primeiro valor:");
-            float v1 = float.Parse(Console.ReadLine());
+            float v1;
+
+            if (!float.TryParse(Console.ReadLine(), out v1))
+            {
+                Console.WriteLine("O primeiro valor inserido não é um número válido.");
+                Console.ReadKey();
+                Menu();
+                return;
+            }
 
             Console.WriteLine("Segundo valor:");
-            float v2 = float.Parse(Console.ReadLine());
+            float v2;
+
+            if (!float.TryParse(Console.ReadLine(), out v2) || v2 == 0)
+            {
+                Console.WriteLine("O segundo valor inserido não é um número válido ou é igual a zero.");
+                Console.ReadKey();
+                Menu();
+                return;
+            }
 
             Console.WriteLine("");
-
             Console.WriteLine($"O resultado da divisão é {v1 / v2}.");
-
             Console.ReadKey();
             Menu();
         }
+
 
         static void Multiplicacao()
         {
-            Console.WriteLine("Primeiro lavor:");
-            float v1 = float.Parse(Console.ReadLine());
+            Console.WriteLine("Primeiro valor:");
+            float v1;
+
+            if (!float.TryParse(Console.ReadLine(), out v1))
+            {
+                Console.WriteLine("O primeiro valor inserido não é um número válido.");
+                Console.ReadKey();
+                Menu();
+                return;
+            }
 
             Console.WriteLine("Segundo valor:");
-            float v2 = float.Parse(Console.ReadLine());
+            float v2;
+
+            if (!float.TryParse(Console.ReadLine(), out v2))
+            {
+                Console.WriteLine("O segundo valor inserido não é um número válido.");
+                Console.ReadKey();
+                Menu();
+                return;
+            }
 
             Console.WriteLine("");
-
-            Console.WriteLine($"O resultado da multiplicação é: {v1 * v2}");
-
+            Console.WriteLine($"O resultado da multiplicação é {v1 * v2}.");
             Console.ReadKey();
             Menu();
         }
+
 
         static void Sair()
         {
