@@ -6,7 +6,7 @@ namespace Calculator
     {
         static void Main(string[] args)
         {
-            Subtracao();
+            Divisao();
         }
 
         static void Soma()
@@ -37,6 +37,21 @@ namespace Calculator
             Console.WriteLine("");
 
             Console.WriteLine($"O resultado da subtração é {v1 - v2}."); // Ao usar o cifrão($), denomina-se interpolação de strings.
+        }
+
+        static void Divisao()
+        {
+            Console.Clear();
+
+            Console.WriteLine("Primeiro valor:");
+            float v1 = float.Parse(Console.ReadLine());
+
+            Console.WriteLine("Segundo valor:");
+            float v2 = float.Parse(Console.ReadLine());
+
+            Console.WriteLine("");
+
+            Console.WriteLine($"O resultado da divisão é {v1 / v2}.");
         }
     }
 }
