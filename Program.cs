@@ -6,12 +6,17 @@ namespace Calculator
     {
         static void Main(string[] args)
         {
+            Soma();
+        }
+
+        static void Soma()
+        {
             Console.Clear();
 
-            Console.WriteLine("Primeiro valor: ");
+            Console.WriteLine("Primeiro valor:");
             float v1 = float.Parse(Console.ReadLine()); //Readline sempre retorna uma string. Caso queira um float, use Parse.
 
-            Console.WriteLine("Segundo valor: ");
+            Console.WriteLine("Segundo valor:");
             float v2 = float.Parse(Console.ReadLine());
 
             Console.WriteLine("");
